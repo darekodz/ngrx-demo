@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset } from '../counter.actions';
+import { increment, reset } from '../../store/counter.actions';
 
 @Component({
   selector: 'app-my-counter',
@@ -9,18 +9,16 @@ import { increment, decrement, reset } from '../counter.actions';
   styleUrls: ['./my-counter.component.scss'],
 })
 export class MyCounterComponent {
-  count$: Observable<number>;
+  count$: Observable<string[]>;
 
-  constructor(private store: Store<{ count: number }>) {
+  constructor(private store: Store<{ count: string[] }>) {
     this.count$ = store.pipe(select('count'));
   }
 
   increment() {
-    this.store.dispatch(increment());
-  }
-
-  decrement() {
-    this.store.dispatch(decrement());
+    this.store.dispatch(increment({
+      url: 'dasdsadsa'
+    }));
   }
 
   reset() {

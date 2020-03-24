@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { AddLinkComponent } from './components/add-link/add-link.component';
 import { DataGridComponent } from './components/data-grid/data-grid.component';
 import { ResetDataComponent } from './components/reset-data/reset-data.component'; // Angular CLI
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ResetDataComponent } from './components/reset-data/reset-data.component
     ResetDataComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ links: linksReducer }),

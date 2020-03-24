@@ -1,1 +1,27 @@
-<button id="increment" (click)="increment()">Increment</button>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name" required >
+        
+    </div>
+
+    <div>
+        <label for="url">
+            Url
+        </label>
+        <input id="url" type="text" formControlName="url">
+    </div>
+
+    <div>
+        <label for="description">
+            Description
+        </label>
+        <input id="description" type="text" formControlName="description">
+    </div>
+
+    <button class="button" type="submit">Add</button>
+
+</form>

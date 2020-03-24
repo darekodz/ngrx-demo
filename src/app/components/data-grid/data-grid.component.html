@@ -1,8 +1,10 @@
-<table>
+<table class="table">
     <thead>
-        <th>name</th>
-        <th>url</th>
-        <th>description</th>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">url</th>
+            <th scope="col">description</th>
+        </tr>
     </thead>
     <tbody>
         <tr *ngFor="let link of links$ | async">

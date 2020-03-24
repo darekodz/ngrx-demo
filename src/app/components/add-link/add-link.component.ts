@@ -13,7 +13,9 @@ export class AddLinkComponent {
 
   increment() {
     this.store.dispatch(add({
-      url: 'dasdsadsa'
+      name: 'new link',
+      url: 'dasdsadsa',
+      description: 'dasdasdasdas'
     }));
   }
 

@@ -1,1 +1,14 @@
-<div>{{ links$ | async }}</div>
+<table>
+    <thead>
+        <th>name</th>
+        <th>url</th>
+        <th>description</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let link of links$ | async">
+            <td>{{ link.name }}</td>
+            <td>{{ link.url }}</td>
+            <td>{{ link.description }}</td>
+        </tr>
+    </tbody>
+</table>

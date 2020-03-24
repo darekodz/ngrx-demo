@@ -1,22 +1,38 @@
 import { createReducer, on } from '@ngrx/store';
 import { add, reset } from './links.actions';
 
-export const initialState = [
-  'http://onet.pl',
-  'http://wp.pl',
-  'http://interia.pl'
+export interface Link {
+  name: string;
+  url: string;
+  description: string;
+}
+
+export const initialState: Link[] = [
+  {
+    name: 'onet',
+    url: 'http://onet.pl',
+    description: 'dasdsadasdasdas a das dsa  sa sa as asd'
+  },
+  {
+    name: 'wp',
+    url: 'http://wp.pl',
+    description: 'sjfhisdfhisd   siiosd ji iosjhsdio io siio isd jif'
+  },
+  {
+    name: 'interia',
+    url: 'http://interia.pl',
+    description: 'skjdhfsdjfsd osd oso ijhs joisd ji sdjf dsoj o'
+  }
 ];
 
-// tslint:disable-next-line:variable-name
-const _linksReducer = createReducer(initialState,
-  on(add, (state, {url}) => [
+const linksReducerTmp = createReducer(initialState,
+  on(add, (state, link) => [
     ...state,
-    url
+    link
   ]),
-  // on(decrement, state => state - 1),
   on(reset, () => []),
 );
 
-export function linksReducer(state, action) {
-  return _linksReducer(state, action);
+export function linksReducer(state: Link[], action) {
+  return linksReducerTmp(state, action);
 }

@@ -5,21 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './store/counter.reducer';
-import { MyCounterComponent } from './components/my-counter/my-counter.component';
+import { linksReducer } from './store/links.reducer';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment'; // Angular CLI
+import { environment } from '../environments/environment';
+import { AddLinkComponent } from './components/add-link/add-link.component';
+import { DataGridComponent } from './components/data-grid/data-grid.component';
+import { ResetDataComponent } from './components/reset-data/reset-data.component'; // Angular CLI
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyCounterComponent
+    AddLinkComponent,
+    DataGridComponent,
+    ResetDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ links: linksReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { increment, reset } from './counter.actions';
+import { add, reset } from './links.actions';
 
 export const initialState = [
   'http://onet.pl',
@@ -8,8 +8,8 @@ export const initialState = [
 ];
 
 // tslint:disable-next-line:variable-name
-const _counterReducer = createReducer(initialState,
-  on(increment, (state, {url}) => [
+const _linksReducer = createReducer(initialState,
+  on(add, (state, {url}) => [
     ...state,
     url
   ]),
@@ -17,6 +17,6 @@ const _counterReducer = createReducer(initialState,
   on(reset, () => []),
 );
 
-export function counterReducer(state, action) {
-  return _counterReducer(state, action);
+export function linksReducer(state, action) {
+  return _linksReducer(state, action);
 }

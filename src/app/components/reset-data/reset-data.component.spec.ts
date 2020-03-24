@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyCounterComponent } from './my-counter.component';
+import { ResetDataComponent } from './reset-data.component';
 
-describe('MyCounterComponent', () => {
-  let component: MyCounterComponent;
-  let fixture: ComponentFixture<MyCounterComponent>;
+describe('ResetDataComponent', () => {
+  let component: ResetDataComponent;
+  let fixture: ComponentFixture<ResetDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyCounterComponent ]
+      declarations: [ ResetDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyCounterComponent);
+    fixture = TestBed.createComponent(ResetDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

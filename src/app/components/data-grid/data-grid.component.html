@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">url</th>
+            <th scope="col">description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let link of links$ | async">
+            <td>{{ link.name }}</td>
+            <td>{{ link.url }}</td>
+            <td>{{ link.description }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{{ links2$ | async | json }}
